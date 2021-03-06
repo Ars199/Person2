@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,6 +13,7 @@ public class Main {
         Comparator ageComparator = new CustomComparator();
         Collections.sort(person, ageComparator);
 
-        System.out.println(person);
+        System.out.println(person.stream().filter((p) -> p.getAge() < 30).collect(Collectors.toList()));
+
     }
 }
