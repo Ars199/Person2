@@ -11,10 +11,11 @@ public class Main {
         person.add(new Person("Lena"));
 
 
-        Comparator ageComparator = new AgeComparator();
-        Comparator nameComparator = new NameComparator();
+        //Comparator ageComparator = new AgeComparator();
+        //Comparator nameComparator = new NameComparator();
+        Comparator ageComparator = new NameComparator().thenComparing(new AgeComparator());
 
-        //Collections.sort(person, nameComparator);
+
         Collections.sort(person, ageComparator);
 
         System.out.println(person.stream().filter((p) -> p.getAge() < 30).collect(Collectors.toList()));
