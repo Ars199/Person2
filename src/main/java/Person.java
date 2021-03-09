@@ -1,6 +1,7 @@
+import java.util.Comparator;
 import java.util.Random;
 
-public class Person2 {
+public class Person {
     private String name;
     private int age;
 
@@ -12,7 +13,7 @@ public class Person2 {
         return age;
     }
 
-    public Person2(String name) {
+    public Person(String name) {
         this.name = name;
         this.age = new Random().nextInt(50);
     }
